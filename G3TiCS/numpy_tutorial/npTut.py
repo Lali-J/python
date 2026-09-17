@@ -1,14 +1,33 @@
-import numpy as np
+import pandas as pd
 
-a = np.array([[1, 2, 3],
-              [4, 5, 6],
-              [7, 8 ,9],
-              [10,11,12],
-              [13,14,15],
-              [16,17,18]])
-print(a.shape)
+scores = pd.DataFrame(
+    [
+        [85, 91, 78, 92],
+        [88, 76, 95, 89],
+        [90, 87, 84, 93]
+    ],
+    index=["Alex", "Sam", "Jordan"],
+    columns=["Assignment 1", "Assignment 2",
+             "Assignment 3", "Assignment 4"]
+)
+print(scores)
 
+data = pd.read_csv("G3TiCS/pennData500.csv")
 
-b = np.array([1, 2, 3, 4, 5, 6])
-print(b.shape)
-print(b[3:])
+print("\nHead of the DataFrame:")
+print(data.head())
+print("\nTail of the DataFrame:")
+print(data.tail())
+print("\nShape of the DataFrame:")
+print(data.shape)
+print("\nNames of the columns:")
+print(data.columns)
+print("\nData types of the columns:")
+print(data.dtypes)
+print("\nDescribe function output:")
+print(data.describe())
+print("\n")
+print(data["GPA"].mean())
+print(data["GPA"].median())
+print(data["GPA"].min())
+print(data["GPA"].max())
