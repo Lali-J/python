@@ -49,7 +49,7 @@ import pandas as pd
 
 The primary data structure we will use is called a DataFrame.
 
-##Part 2: Your first Dataframe
+## Part 2: Your first Dataframe
 
 Run the following code:
 
@@ -74,11 +74,11 @@ print(scores)
 
 #### Question 1
 How is this DataFrame similar to the NumPy array you created last class?
-* Your answer:
+* Your answer: It has the same basic information of there is three students and there is four assignments that hold their scores for each one
 
 #### Question 2
 How is it different?
-* Your answer:
+* Your answer: It labled both axes to create a cleaner way to view the code
 
 ## Part 3 — Reading a CSV
 
@@ -90,10 +90,13 @@ data = pd.read_csv("pennData500.csv")
 
 ### Questions:
 - What is a DataFrame?
+    - A two-dimentional data structure that orgainzes in rows and columns
 - How is it similar to the 2D NumPy array you worked with?
+    - How it orgainzes the data given
 - What's different?
+    - The amount and details of the information
 - Why are column names useful?
-
+    - It makes the data easy to read for anyone
 ## Part 4: Looking at the DataFrame
 ```python
 print(data.head())
@@ -105,11 +108,15 @@ print(data.dtypes)
 
 ### Questions:
 - What does .head() do?
+    - It shows the first pieces of information at the top of the set
 - What does .tail() do?
+    - It shows the last pieces of information at the bottom
 - What is the shape of this data?
+    - It has 500 rows and 7 columns
 -  What is the result of .columns?
+    - It tells you what each column is labeled as
 - What is the result of .dtype?
-
+    - It tells you the type of data type in the array
 
 ## Describe
 ```python
@@ -118,7 +125,7 @@ print(data.describe())
 
 ### Questions:
 - What does .describe() do?
-
+    - It does a lot!! It tells you the count, mean, std, min, 25%, 50%, 70%, and max for compatable columns.
 ## Statistics
 ```python
 print(data["COLUMN_NAME"].mean())
@@ -132,11 +139,17 @@ Replace "COLUMN_NAME" with a column name from the data and run the code above
 
 ### Questions:
 - Which column did you choose?
+    - I chose column GPA
 - What is the mean?
+    - 2.33026521042084
 - What is the median?
+    - 2.38
 - What is the minimum value?
+    - 0.31
 - What is the maximum value?
+    - 4.3
 - In your own words, what do these statistics tell you about the data?
+    - There is a very wide range of how good or bad the grades are at this school but overall it seems really negative
 
 ## Part 5: Selecting Data
 
