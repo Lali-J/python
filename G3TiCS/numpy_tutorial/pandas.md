@@ -74,11 +74,11 @@ print(scores)
 
 #### Question 1
 How is this DataFrame similar to the NumPy array you created last class?
-* Your answer:
+* Your answer: This is similar because it has the same columns and rows with the same roots of information
 
 #### Question 2
 How is it different?
-* Your answer:
+* Your answer: It labels both axes to clarify information
 
 ## Part 3 — Reading a CSV
 
