@@ -173,9 +173,13 @@ Replace `"COLUMN_1"` and `"COLUMN_2"` with two columns from the dataset.
 
 ### Questions:
 - Which column did you select first?
+    - Year
 - What type of data does that column contain?
+    - Tells me what year they are currently in
 - Which two columns did you select together?
+    - Year and their Pathway
 - Why might it be useful to look at only a few columns instead of the entire DataFrame?
+    - It could be really useful if you are trying to find a correlation between them or need both pieces of information without trying to get overwhelmed
 
 ## Part 6: Filtering Data
 
@@ -209,9 +213,13 @@ print(filtered_data)
 
 ### Questions:
 - Which column did you filter?
+    - The GPA
 - What condition did you use?
+    - If the student's GPA was higher than a 4.0
 - How many rows appear to meet your condition?
+    - 51 rows
 - In your own words, explain what your filter asked Pandas to find.
+    - Basically look in the GPA column and tell me which rows have a GPA higher than 4.0 and tell me the rest of their information
 
 ## Part 7: Filtering Qualitative Data
 
@@ -257,9 +265,13 @@ print(filtered_data)
 
 ### Questions:
 - Which qualitative variable did you use?
+    - Year
 - What value did you search for?
+    - If they are on their victory lap year
 - What does the resulting DataFrame contain?
+    - There are a 104 students who are on their Victory lap year
 - Why do we use `==` instead of `=` when checking whether two values are equal?
+    - To compare if the years match rather than setting
 
 ## Part 8: Combining Selection and Filtering
 
@@ -289,16 +301,17 @@ Create your own example that:
 Paste or write your completed code below:
 
 ```python
-
-# YOUR CODE HERE
-
-
+filtered_data = data[data["GPA"] > 4.0]
+print(filtered_data[["GPA", "Year"]])
 ```
 
 ### Questions:
 - What question were you trying to answer?
+    - Does year correlate with how well your grades are
 - What did your code find?
+    - No absoultely it does not and there are a ton of students from varying grades that have a GPA higher than 4.0
 - Did the result match what you expected? Explain.
+    - No because there was a good mix of all the grades including victory lap. There wasn't any that stood out as having more than the other grades
 
 ## Part 9: Data Detective
 
@@ -340,21 +353,31 @@ data[data["COLUMN_NAME"] == "VALUE"]
 ### Challenge 1
 
 How many **rows** and **columns** are in the Penn dataset?
+* There are 500 rows and 6 Columns
 
 Write the Pandas command you used and your answer.
+```python
+print(data.shape)
+```
 
 ### Challenge 2
 
-Choose one quantitative variable.
+Choose one quantitative variable. 
+- My quantitative variable was Credits Completed
 
 Determine its:
 
-- Mean  
+- Mean 
+    - 30.647295
 - Median  
-- Minimum  
-- Maximum  
+    - 32.0
+- Minimum 
+    - 0
+- Maximum
+    - 60
 
 What does this information tell you about that variable?
+- This school has a very large variety of students effort but overall most are in the 30s range
 
 ### Challenge 3
 
@@ -371,8 +394,14 @@ Do not use this exact question. Create your own.
 Write:
 
 - Your question  
+    - How many students are interested in the Computer Science Pathway?
 - Your Python code  
+``` python
+fd3 = data[(data["Pathway"] == "Computer Science")]
+print(fd3)
+```
 - What you discovered
+    - Out of 500 students only 42 of them want to proceed with Computer Science
 
 ### Challenge 4
 
@@ -382,9 +411,13 @@ Display only those two columns.
 
 ### Questions:
 - Which variables did you choose?
+    - Who chose the Computer Science pathway and if their grades are higher than a 3.2
 - Why did you choose them?
+    - I wanted to see what majority of computer science have a good GPA
 - Do you notice anything interesting?
+    - Out of 42 students only 15 have a GPA higher than 3.2
 - What would you want to investigate further?
+    - What grades they are in to see if its easier to be in a certain grade to get a good GPA
 
 ## Part 10: Ask Your Own Question
 

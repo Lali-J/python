@@ -27,7 +27,24 @@ print(data.dtypes)
 print("\nDescribe function output:")
 print(data.describe())
 print("\n")
+
 print(data["GPA"].mean())
 print(data["GPA"].median())
 print(data["GPA"].min())
 print(data["GPA"].max())
+print("\n")
+
+print(data[["Year", "Pathway"]])
+filtered_data = data[data["GPA"] > 4.0]
+print(filtered_data[["GPA", "Year"]])    
+filtered_data2 = data[(data["Year"] == "Victory Lap")]
+print("\nFiltered Data for Victory Lap Year:")
+print(filtered_data2)
+
+print(data["Credits Completed"].describe())
+print(data["Credits Completed"].median())
+print("\n\n\n")
+fd3 = data[(data["Pathway"] == "Computer Science")]
+print(fd3)
+fd4 = data[(data["Pathway"] == "Computer Science") & (data["GPA"] > 3.2)]
+print(fd4[["Name", "GPA", "Pathway"]])
