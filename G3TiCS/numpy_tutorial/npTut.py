@@ -48,3 +48,6 @@ fd3 = data[(data["Pathway"] == "Computer Science")]
 print(fd3)
 fd4 = data[(data["Pathway"] == "Computer Science") & (data["GPA"] > 3.2)]
 print(fd4[["Name", "GPA", "Pathway"]])
+
+fd5 = data[(data["Year"] == "Senior") & (data["Credits Completed"] < 20) | (data["Year"] == "Senior") & (data["GPA"] < 2.0)]
+print(fd5[["Name", "Credits Completed", "GPA", "Year"]])

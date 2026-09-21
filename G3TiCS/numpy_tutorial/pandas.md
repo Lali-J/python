@@ -417,7 +417,7 @@ Display only those two columns.
 - Do you notice anything interesting?
     - Out of 42 students only 15 have a GPA higher than 3.2
 - What would you want to investigate further?
-    - What grades they are in to see if its easier to be in a certain grade to get a good GPA
+    - What grades they are in to see if its easier to be in a certain grade in computer science to get help with your GPA
 
 ## Part 10: Ask Your Own Question
 
@@ -431,7 +431,7 @@ Write one question about Penn that you believe this dataset can answer.
 
 ### My Question:
 
-Your question:
+Your question: Are all the current seniors set at an acceptable GPA and have enough credit in order to graduate?
 
 ### My Code:
 
@@ -439,18 +439,19 @@ Write the Pandas code necessary to help answer your question.
 
 ```python
 
-# YOUR CODE HERE
-
+fd5 = data[(data["Year"] == "Senior") & (data["Credits Completed"] <20) | (data["Year"] == "Senior") & (data["GPA"] < 2.0)]
+print(fd5[["Name", "Credits Completed", "GPA", "Year"]])
 
 ```
 
 ### My Result:
 
 What did your program find?
-
+- There are 61 seniors that might have to take a Victory lap unless help is given to them
 ### What Does It Mean?
 
 Explain your result in a complete sentence.
+- Currently 61 seniors either have a GPA less than 2.0 or they have less than 20 credits completed. So these students need a lil extra help or push
 
 Do not simply write the number produced by Python.
 
@@ -471,10 +472,12 @@ Write one interesting question about Penn that **cannot** be answered using this
 ### Question:
 
 What would you like to know?
+- What are the characters like of each student. Are they good or bad or just kinda there? 
 
 ### Missing Data:
 
 What additional variable or data would need to be collected to answer your question?
+- Number of disaplines for each student such as how many dententions or referals they have recived
 
 ## Final Reflection
 
@@ -483,16 +486,19 @@ Answer each question in 1–3 complete sentences.
 ### 1. NumPy vs. Pandas
 
 What is one major difference you noticed between working with a NumPy array and working with a Pandas DataFrame?
+- Pandas DataFrames keep information a lot cleaner and easier to read to just about anybody. Pandas is pretty fun to write the data but panda is better to analyze it.
 
 ### 2. DataFrames
 
 Why might a DataFrame be more useful than a basic 2D array when working with a large real-world dataset?
+- You can separate the information so you can look at specific ones that meet a requirement or certain clumps of information
 
 ### 3. Data Science
 
 Return to today's Driving Question:
 
 **How can we use Pandas to organize and analyze real-world data?**
+- We can use it to separate data, find middles, and analyze it to tell us certain details such as x relates to y. Just like how I analyzed it to tell me if we have a lot of computer science students then further to see if they are a good student academically.
 
 Answer the question using something you did during today's activity as an example.
 
@@ -500,20 +506,20 @@ Answer the question using something you did during today's activity as an exampl
 
 Make sure you have:
 
-- [ ] Installed and imported Pandas  
-- [ ] Created your first DataFrame  
-- [ ] Loaded `pennData500.csv`  
-- [ ] Used `.head()` and `.tail()`  
-- [ ] Examined the shape, columns, and data types  
-- [ ] Used `.describe()`  
-- [ ] Calculated summary statistics  
-- [ ] Selected individual columns  
-- [ ] Filtered quantitative data  
-- [ ] Filtered qualitative data  
-- [ ] Completed the Data Detective challenges  
-- [ ] Created and answered your own data question  
-- [ ] Identified a question the dataset cannot answer  
-- [ ] Completed the final reflection  
+- [X] Installed and imported Pandas  
+- [X] Created your first DataFrame  
+- [X] Loaded `pennData500.csv`  
+- [X] Used `.head()` and `.tail()`  
+- [X] Examined the shape, columns, and data types  
+- [X] Used `.describe()`  
+- [X] Calculated summary statistics  
+- [X] Selected individual columns  
+- [X] Filtered quantitative data  
+- [X] Filtered qualitative data  
+- [X] Completed the Data Detective challenges  
+- [X] Created and answered your own data question  
+- [X] Identified a question the dataset cannot answer  
+- [X] Completed the final reflection  
 
 ## If You Finish Early
 
